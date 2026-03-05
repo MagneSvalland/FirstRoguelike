@@ -4,6 +4,7 @@ using TMPro;
 using System.Collections.Generic;
 using FirstRoguelike.Blessings;
 using FirstRoguelike.Bloodlines;
+using UnityEngine.InputSystem;
 
 namespace FirstRoguelike.UI
 {
@@ -20,8 +21,7 @@ namespace FirstRoguelike.UI
 
         private void Update()
         {
-            // Press L to trigger level up for testing
-            if (Input.GetKeyDown(KeyCode.L))
+            if (Keyboard.current.lKey.wasPressedThisFrame)
                 ShowSelection();
         }
 
