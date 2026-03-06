@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FirstRoguelike.Bloodlines.BloodlineSO
   bloodlineName: Dragon
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0, g: 0, b: 0, a: 1}
   tiers:
   - {fileID: 11400000, guid: 30d681aee8b138447860289ff83bca67, type: 2}
   - {fileID: 11400000, guid: 1a05a874729b0fa4db9af3a8a74c67a3, type: 2}

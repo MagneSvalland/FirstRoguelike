@@ -1,7 +1,7 @@
 using UnityEngine;
 using FirstRoguelike.Core;
 using FirstRoguelike.Stats;
-using System.Collections.Generic;
+using FirstRoguelike.Player;
 
 namespace FirstRoguelike.Weapons
 {
@@ -9,22 +9,15 @@ namespace FirstRoguelike.Weapons
     {
         [Header("Weapon Settings")]
         [SerializeField] private GameObject projectilePrefab;
-        [SerializeField] private float baseAttackSpeed = 1f;
-        [SerializeField] private float baseDamage = 10f;
 
         private IAttackStrategy _attackStrategy;
-        private StatSheet _statSheet;
+        private PlayerStatSheet _playerStatSheet;
         private float _attackTimer;
 
         private void Awake()
         {
-            var baseStats = new Dictionary<StatType, float>
-            {
-                { StatType.Damage, baseDamage },
-                { StatType.AttackSpeed, baseAttackSpeed }
-            };
-            _statSheet = new StatSheet(baseStats);
-            _attackStrategy = new MageAttackStrategy(projectilePrefab, _statSheet);
+            _playerStatSheet = GetComponent<PlayerStatSheet>();
+            _attackStrategy = new MageAttackStrategy(projectilePrefab, _playerStatSheet.StatSheet);
         }
 
         private void Update()

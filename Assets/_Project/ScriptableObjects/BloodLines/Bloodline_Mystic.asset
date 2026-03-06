@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FirstRoguelike.Bloodlines.BloodlineSO
   bloodlineName: Mystic
   icon: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0, g: 0, b: 0, a: 1}
   tiers:
   - {fileID: 11400000, guid: c048a608c9285104dbe41b0b173adc48, type: 2}
   - {fileID: 11400000, guid: f7acc88fc41135e4f8bd83d2b8b5789a, type: 2}
