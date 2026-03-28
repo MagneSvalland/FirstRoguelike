@@ -1,4 +1,5 @@
 using UnityEngine;
+using FirstRoguelike.UI;
 
 namespace FirstRoguelike.Enemy
 {
@@ -10,8 +11,12 @@ namespace FirstRoguelike.Enemy
         [SerializeField] private float spawnRadius = 8f;
         [SerializeField] private float timeBetweenWaves = 10f;
 
+        [Header("References")]
+        [SerializeField] private HUDController hudController;
+
         private Transform _playerTransform;
         private float _waveTimer;
+        private int _currentWave = 1;
 
         private void Start()
         {
@@ -19,7 +24,6 @@ namespace FirstRoguelike.Enemy
             if (player != null)
                 _playerTransform = player.transform;
 
-            // Spawn first wave immediately
             SpawnWave();
         }
 
@@ -29,6 +33,8 @@ namespace FirstRoguelike.Enemy
             if (_waveTimer >= timeBetweenWaves)
             {
                 _waveTimer = 0f;
+                _currentWave++;
+                hudController?.SetWave(_currentWave);
                 SpawnWave();
             }
         }
